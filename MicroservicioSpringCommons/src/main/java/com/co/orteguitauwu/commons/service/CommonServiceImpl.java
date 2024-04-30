@@ -1,41 +1,42 @@
-package com.co.orteguitauwu.usuarios.service;
+package com.co.orteguitauwu.commons.service;
 
 
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/*
 import com.co.orteguitauwu.usuarios.entity.Alumno;
 import com.co.orteguitauwu.usuarios.repository.AlumnoRepository;
-
-@Service
-public class AlumnoServiceImpl implements AlumnoService {
+*/
+public class CommonServiceImpl <E, R extends CrudRepository<E,Long>> implements CommonService<E> {
 
 	@Autowired
-	AlumnoRepository dao;
+	private R dao;
 	
 	@Override
 	@Transactional(readOnly = true)
-	public Iterable<Alumno> findAll() {
+	public Iterable<E> findAll() {
 		// TODO Auto-generated method stub
 		return dao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Optional<Alumno> findById(long id) {
+	public Optional<E> findById(long id) {
 		// TODO Auto-generated method stub
 		return dao.findById(id);
 	}
 
 	@Override
 	@Transactional
-	public Alumno save(Alumno alumno) {
+	public E save(E entity) {
 		// TODO Auto-generated method stub
-		return dao.save(alumno);
+		return dao.save(entity);
 	}
 
 	@Override
