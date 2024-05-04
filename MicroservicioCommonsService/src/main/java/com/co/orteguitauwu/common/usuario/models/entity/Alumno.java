@@ -1,4 +1,4 @@
-package com.co.orteguitauwu.usuarios.entity;
+package com.co.orteguitauwu.common.usuario.models.entity;
 
 import java.util.Date;
 
@@ -72,6 +72,7 @@ public class Alumno {
         this.createAt = createAt;
     }
 	
+    /*
 	@Override
     public String toString() {
         return "Alumno{" +
@@ -81,6 +82,19 @@ public class Alumno {
                 ", email='" + email + '\'' +
                 ", createAt=" + createAt +
                 '}';
+    }*/
+    @Override
+    public boolean equals(Object obj) {
+    	
+    	if(this == obj) {
+    		return true;
+    	}
+    	if(!(obj instanceof Alumno)) {
+    		return false;
+    	}
+    	
+    	Alumno a = (Alumno) obj;
+    	return super.equals(obj);
     }
 
 }

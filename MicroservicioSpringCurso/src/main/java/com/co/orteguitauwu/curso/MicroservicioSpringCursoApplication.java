@@ -1,4 +1,4 @@
-package com.co.orteguitauwu.usuarios;
+package com.co.orteguitauwu.curso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,10 +12,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan({"com.co.orteguitauwu.common.models.entity","com.co.orteguitauwu.curso.models.entity"})
 @EnableJpaRepositories({"com.co.orteguitauwu.common.models.entity","com.co.orteguitauwu.curso.models.entity"})
 @EntityScan({"com.co.orteguitauwu.common.models.entity","com.co.orteguitauwu.curso.models.entity"})
-public class UsuariosApplication {
+public class MicroservicioSpringCursoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UsuariosApplication.class, args);
+		SpringApplication.run(MicroservicioSpringCursoApplication.class, args);
 	}
 
 }
