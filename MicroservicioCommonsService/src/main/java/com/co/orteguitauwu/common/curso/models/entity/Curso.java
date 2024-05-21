@@ -1,4 +1,4 @@
-package com.co.orteguitauwu.curso.models.entity;
+package com.co.orteguitauwu.common.curso.models.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -71,6 +71,10 @@ public class Curso {
 	
 	public void removeAlumnos(Alumno alumno) {
 		this.listaAlumno.remove(alumno);
+	}
+	
+	public void addAlumnos(Alumno alumno) {
+		this.listaAlumno.add(alumno);
 	}
 
 }

@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.co.orteguitauwu.common.usuario.models.entity.Alumno;
 import com.co.orteguitauwu.commons.controller.CommonController;
-import com.co.orteguitauwu.usuarios.entity.Alumno;
 import com.co.orteguitauwu.usuarios.service.AlumnoService;
 
 @RestController

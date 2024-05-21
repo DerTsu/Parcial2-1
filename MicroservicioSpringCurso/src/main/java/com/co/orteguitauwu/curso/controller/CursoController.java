@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.co.orteguitauwu.common.curso.models.entity.Curso;
 import com.co.orteguitauwu.common.usuario.models.entity.Alumno;
 import com.co.orteguitauwu.commons.controller.CommonController;
-import com.co.orteguitauwu.curso.models.entity.Curso;
 import com.co.orteguitauwu.curso.services.CursoService;
 //import com.co.orteguitauwu.usuarios.entity.Alumno;
 
@@ -54,7 +54,7 @@ public class CursoController extends CommonController<Curso, CursoService>{
 	}
 	
 	@PutMapping("/{id}/eliminar-alumno")
-	public ResponseEntity<?> eliminarAlumno(@RequestBody List<Alumno> alumno, @PathVariable Long id){
+	public ResponseEntity<?> eliminarAlumno(@RequestBody Alumno alumno, @PathVariable Long id){
 		Optional<Curso> ob = service.findById(id);
 		
 		if(ob.isEmpty()) {
@@ -63,7 +63,7 @@ public class CursoController extends CommonController<Curso, CursoService>{
 		
 		Curso cursoBd = ob.get();
 		
-		cursoBd.removeAlumno(alumno);
+		cursoBd.removeAlumnos(alumno);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(cursoBd));
 		
